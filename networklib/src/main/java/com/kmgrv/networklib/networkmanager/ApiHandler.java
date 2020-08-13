@@ -19,8 +19,8 @@ import java.util.HashMap;
 public class ApiHandler extends NetworkHandler{
 
     public static final String HTTP_STATUS = "status";
-    public static final String SUCCESS = "200";
-    public static final String ERROR = "401";
+    public static final String SUCCESS = "success";
+    public static final String ERROR = "error";
     public static final String VOLLEY_ERROR = "VOLLEY_ERROR";
 
 
