@@ -45,6 +45,13 @@ public class NetworkController {
     public <T> void addToRequestQueue(Request<T> req) {
         req.setTag(TAG);
         getRequestQueue().add(req);
+
+        getRequestQueue().addRequestFinishedListener(new RequestQueue.RequestFinishedListener<Object>() {
+            @Override
+            public void onRequestFinished(Request<Object> request) {
+                getRequestQueue().getCache().clear();
+            }
+        });
     }
 
     public void cancelPendingRequests(Object tag) {
